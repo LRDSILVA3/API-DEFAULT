@@ -4,10 +4,12 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   Column,
+  OneToOne,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity('clients')
-class Product {
+class Client {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -28,6 +30,7 @@ class Product {
 
   @UpdateDateColumn()
   updated_at: Date;
+
 }
 
-export default Product;
+export default Client;
