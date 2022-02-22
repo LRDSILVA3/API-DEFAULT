@@ -1,7 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import Sale from "@modules/sales/typeorm/entities/Sale";
+import { Column, Entity, JoinColumn, ManyToMany, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity('sales_products')
 class SalesProducts{
+
+    @ManyToMany(() => Sale, (tbSales) => tbSales.id)
+    @JoinColumn([{name:'id', referencedColumnName: 'id_sales_products'}])
     @PrimaryGeneratedColumn('uuid')
     id: string;
 

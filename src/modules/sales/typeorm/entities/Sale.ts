@@ -6,7 +6,6 @@ import {
     Column,
     ManyToOne,
     JoinColumn,
-    OneToOne,
   } from 'typeorm';
   
   @Entity('sales')
